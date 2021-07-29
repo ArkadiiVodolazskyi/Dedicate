@@ -1,1 +1,78 @@
 header
+	height: $header_height
+	position: fixed
+	top: 0
+	left: 0
+	width: 100vw
+	z-index: 500
+	background-color: $dark
+	color: $w
+	font-family: 'Gotham Pro', sans-serif
+	.wrapper
+		padding: 22px 0 31px
+		display: flex
+		align-items: center
+		justify-content: space-between
+	.logo_delicate
+		width: 136px
+		height: 41px
+		svg path
+			&.delicate
+				fill: $yellow
+			&.car
+				fill: #e0e0e0
+	nav
+		font-size: 11px
+		letter-spacing: -0.17px
+		color: #f2f2f2
+		.nav_list
+		.nav_item
+			position: relative
+			padding: 10px
+			&:not(:first-child)
+				margin-left: 32px
+			&:hover .nav_sublist
+				opacity: 1
+				visibility: visible
+		.nav_link:hover
+			color: $yellow
+		.nav_sublist
+			position: absolute
+			z-index: 100
+			top: 100%
+			left: 50%
+			transform: translate(-50%, 0)
+			width: auto
+			max-width: 200px
+			background-color: rgba($dark, 0.8)
+			display: block
+			padding: 10px 0
+			transition: all 0.2s linear
+			opacity: 0
+			visibility: hidden
+		.nav_subItem
+			padding: 10px
+		.nav_subLink:hover
+			color: $yellow
+	.phones, .schedule
+		p
+			font-size: 11px
+			letter-spacing: -0.17px
+			color: #f2f2f2
+		a, span
+			margin-top: 7px
+			font-size: 14px
+			line-height: 1.19
+			color: $yellow
+	.socials a
+		svg
+			fill: #eaeaea
+		&:hover svg
+			fill: $yellow
+	button.open_request
+		background-color: $yellow
+		color: $b
+		cursor: pointer
+		&:hover
+			background-color: $dyellow
+

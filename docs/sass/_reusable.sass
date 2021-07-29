@@ -1,9 +1,18 @@
-// ---------------------------------------------------------------- Variables
-$b: 			#000000
-$w: 			#ffffff
-$tsp: 		#00000000
 
-// ---------------------------------------------------------------- Reset styles
+/* __________________ Variables __________________ */
+
+$tsp: 		#00000000
+$w: 			#ffffff
+$b: 			#000000
+
+$yellow:	#ffc700
+$dyellow:	#4f3e05
+$dark:		#0e101a
+
+$header_height: 100px
+
+/* __________________ Reset styles __________________ */
+
 *
 	margin: 0
 	padding: 0
@@ -13,7 +22,7 @@ $tsp: 		#00000000
 	box-sizing: border-box
 	line-height: inherit
 
-// ---------------------------------------------------------------- General
+/* __________________ General Tags __________________ */
 
 html
 	max-width: 100vw
@@ -21,12 +30,15 @@ html
 	position: relative
 	font-smooth: antialiased
 	-webkit-font-smoothing: antialiased
+	font-size: 18px
+	font-family: 'Montserrat', sans-serif
 
 body
 	width: 100%
 	height: 100%
 	position: relative
 	z-index: 1
+	padding-top: $header_height
 
 section
 	position: relative
@@ -34,8 +46,53 @@ section
 	width: 100%
 	max-width: 100vw
 
+@for $i from 1 through 6
+  h#{$i}
+    font-family: 'Helvetica Neue', sans-serif
+h1
+	font-size: 109.5px
+h2
+	font-size: 54.7px
+h3
+	font-size: 48px
+h4
+	font-size: 24px
+
+ul
+	display: flex
+	align-items: center
+	justify-content: space-between
+li, span
+	display: block
+
+a
+	display: block
+	text-decoration: none
+	transition: all 0.2s linear
+
+svg
+	transition: all 0.2s linear
+	path
+		transition: all 0.2s linear
+		fill: inherit
+svg, img
+	width: 100%
+	height: auto
+
+button, [type=submit], .button
+	padding: 19px 27px
+	font: 14px 'Gotham Pro', sans-serif
+	text-align: center
+	text-transform: uppercase
+	transition: all 0.2s linear
+
+/* __________________ General Classes __________________ */
+
 .wrapper
-	width: 1280px
+	width: 80%
 	margin: 0 auto
 	position: relative
 	z-index: 5
+
+
+
