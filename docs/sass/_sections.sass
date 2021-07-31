@@ -1,0 +1,682 @@
+
+section.banner_main
+	height: 760px
+	padding: 45px 0 26px
+	.banner_img
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		min-width: 101%
+		min-height: 101%
+	.blurred_wrapper
+		width: 55%
+		height: 100%
+		background-color: rgba($b, 0.23)
+		backdrop-filter: blur(50px)
+		padding: 59px 59px 59px 0
+		position: relative
+	.toSlick
+		height: 100%
+		overflow: hidden
+		.slick-list, .slick-track
+			height: 100%
+	.slide
+		background-color: rgba($dyellow, 0.8)
+		width: 100%
+		height: 100%
+		padding: 79px 0 79px 153px
+		display: inline-block
+		h1
+			color: #bebebe
+			line-height: 1.25
+		h2
+			color: $yellow
+			line-height: 1.25
+		nav
+			margin-top: 42px
+			ul
+				justify-content: flex-start
+				li
+					text-transform: uppercase
+					line-height: 1.25
+					font-size: 20px
+					display: flex
+					align-items: center
+					&:not(:first-child)::before
+						content: ''
+						background-color: $yellow
+						border-radius: 50%
+						display: block
+						width: 0.4em
+						height: 0.4em
+						margin: 0 0.5em
+					a
+						color: #f3f3f3
+						white-space: nowrap
+						&:hover
+							color: $yellow
+	.slick_nav
+		position: absolute
+		right: 59px
+		bottom: 59px
+		transform: translate(-35px, -45px)
+
+section.service
+	margin-top: 166px
+	.wrapper
+	h3
+	.cards
+		margin-top: 52px
+		display: flex
+		gap: 0 36px
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			z-index: 0
+			width: 100vw
+			height: 300px
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			background-color: $ldark
+		.card
+			width: 25%
+			height: 470px
+			position: relative
+			transform: skew(-$skew)
+			.service_img
+				position: absolute
+				z-index: 10
+				width: 100%
+				height: 100%
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				overflow: hidden
+				img
+					min-height: 100%
+					width: auto
+					position: absolute
+					z-index: inherit
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+			h4
+				font-style: italic
+				padding: 26px 55px
+				background-color: $dyellow2
+				backdrop-filter: blur(50px)
+				position: relative
+				z-index: 20
+				width: max-content
+				transform: translate(-12px, 0)
+				font: 24px 'Montserrat', sans-serif
+				font-weight: bold
+				max-width: 90%
+			.text
+				margin-top: 25px
+				position: relative
+				z-index: 20
+				transform: skew($skew)
+				padding: 0 15px 0 40px
+				@include tr
+				opacity: 0
+				p
+					font-style: 18px
+					line-height: 1.3
+					&:not(:first-child)
+						margin-top: 12px
+			.more
+				margin-top: 32px
+				background-color: $yellow
+				&:hover
+					background-color: $dyellow
+			.shadow
+				width: 101%
+				height: 101%
+				position: absolute
+				z-index: 15
+				top: 0
+				left: -3px
+				right: 0
+				bottom: 0
+				background-image: linear-gradient(to top, #0e1019, rgba(14, 16, 25, 0.39))
+				@include tr
+				opacity: 0
+		.card:hover
+			.text, .shadow
+				opacity: 1
+
+section.about_us
+	margin-top: 292px
+	overflow: visible
+	.wrapper
+		display: flex
+		justify-content: space-between
+		gap: 0 44px
+	.left
+		width: 27%
+		position: relative
+		z-index: 10
+		h3
+			margin-left: 0
+		.text
+			margin-top: 22px
+			p
+				font-size: 18px
+				font-weight: 300
+				line-height: 1.44
+				&:not(:first-child)
+					margin-top: 12px
+		.slogan
+			margin-top: 100px
+			display: flex
+			align-items: center
+			> *
+				flex-shrink: 0
+			svg
+				width: 221px
+				height: 66px
+			.dash
+				width: 32px
+				height: 1px
+				background-color: $w
+				margin: 0 20px 30px
+			.slogan_text
+				line-height: 1.29
+				font-family: 'Montserrat', sans-serif
+				font-weight: normal
+	.right
+		width: 73%
+		height: 632px
+		position: relative
+		&::before
+			content: ''
+			background-color: $ldark
+			position: absolute
+			z-index: 0
+			width: 40vw
+			height: 33vw
+			left: 0
+			bottom: 0
+		.photos
+			position: relative
+			z-index: 10
+			height: 100%
+			img
+				position: absolute
+				&:nth-of-type(1)
+					z-index: 50
+					height: 95%
+					width: auto
+					left: 80px
+					bottom: 80px
+				&:nth-of-type(2)
+					z-index: 40
+					height: 53%
+					width: auto
+					left: 45%
+					top: -96px
+				&:nth-of-type(3)
+					z-index: 30
+					height: 50%
+					width: auto
+					left: 43%
+					bottom: 80px
+
+section.pros
+	font-family: 'Helvetica Neue', sans-serif
+	background-color: #27262d
+	margin-top: 65px
+	padding: 90px 0
+	.wrapper
+		display: flex
+		align-items: center
+		justify-content: space-between
+		gap: 9.375%
+		counter-reset: card
+		.card
+			width: 25%
+			transform: skew(-$skew)
+			display: flex
+			align-items: center
+			&::before
+				counter-increment: card
+				content: counters(card, ".")
+				margin-right: 30px
+				color: $tsp
+				font-size: 96px
+				line-height: 1.25
+				font-weight: bold
+				font-style: oblique
+				-webkit-text-stroke: 1px $yellow
+				transform: skew($skew)
+			p
+				font-size: 24px
+				line-height: 1.19
+				color: #eaeaea
+			span
+				transform: skew($skew)
+
+section.portfolio
+	margin-top: 95px
+	padding-bottom: 70px
+	&::before
+		content: ''
+		background-color: $ldark
+		position: absolute
+		z-index: 0
+		width: 37.2vw
+		height: 34vw
+		right: 18%
+		bottom: 60px
+	.slick_nav
+		position: absolute
+		z-index: 50
+		right: 18%
+		bottom: 60px
+		transform: translate(-42px, -33px)
+	.toSlick
+		margin: 120px 0
+		max-width: 100vw
+	.slide
+		width: 30vw !important
+		height: 22.6vw
+		margin: 0 3vw
+		position: relative
+		z-index: 10
+		overflow: hidden
+		padding: 36px 50px
+		box-shadow: 10px 10px 9px 0 rgba(0, 0, 0, 0.15)
+		color: $w
+		display: inline-flex
+		flex-direction: column
+		justify-content: flex-end
+		cursor: pointer
+		@include tr
+		&.slick-current
+			transform: scale(1.25)
+			z-index: 20
+			&::after, .text, button.maximize
+				opacity: 1
+		&::after
+			content: ''
+			display: block
+			width: 100%
+			height: 248px
+			background: linear-gradient(to top, #0e1019, rgba(14, 16, 25, 0))
+			position: absolute
+			z-index: 15
+			left: 0
+			right: 0
+			bottom: 0
+			transition: all 0.2s linear
+			opacity: 0
+		.portfolio_img
+			position: absolute
+			min-width: 105%
+			min-height: 105%
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+		.text
+			position: relative
+			z-index: 20
+			margin-top: auto
+			@include tr
+			opacity: 0
+			.service
+				transform: skew(-$skew)
+				padding: 20px 45px
+				background-color: $dyellow2
+				backdrop-filter: blur(50px)
+				width: max-content
+				font: 16.5px 'Montserrat', sans-serif
+				font-weight: bold
+			.manage
+				margin-top: 12px
+				display: flex
+				align-items: center
+				justify-content: space-between
+			.car_name
+				font-size: 18px
+				line-height: 1.19
+				text-transform: uppercase
+			button.more
+				padding: 17px 31px
+				background-color: $dyellow2
+				font: 14px 'Gotham Pro', sans-serif
+				&:hover
+					background-color: $yellow
+		button.maximize
+			position: absolute
+			z-index: 20
+			top: 20px
+			right: 20px
+			background: none
+			@include tr
+			opacity: 0
+			svg
+				fill: #0e101a
+				stroke: $w
+			&:hover svg
+				stroke: $yellow
+
+section.prices
+	margin-top: 182px
+	.wrapper
+		width: 1280px
+	.slick_nav
+		margin-top: 60px
+		.slick-dots
+			justify-content: flex-start
+		button.change_tab
+			padding: 24px 53px
+			font-size: 24px
+			font-weight: 500
+			line-height: 1.19
+			text-transform: none
+			color: #eaeaea
+			background-color: $tsp
+			&:hover
+				color: $dark
+				background-color: $yellow
+			&[aria-selected=true]
+				color: $dark
+				background-color: $yellow
+	.content
+		margin-top: 12px
+	.slide
+		width: 1280px
+		display: inline-block
+		border: 1px solid $yellow
+		@include tr
+		opacity: 0
+		visibility: hidden
+		&.slick-active
+			opacity: 1
+			visibility: visible
+		table
+			width: 100%
+			border-collapse: collapse
+			font-family: 'Montserrat', sans-serif
+			font-size: 18px
+			font-weight: 500
+			line-height: 2.65
+			border: 1px solid $yellow
+			tr
+				td, th
+					border: solid 1px #474747
+					padding: 0 30px
+					font-weight: 400
+					&:first-child
+						width: 67%
+					&:not(:first-child)
+						width: 11%
+				th
+					padding: 30px
+					&:nth-of-type(1)
+						text-align: left
+						font-size: 24px
+			tbody
+				counter-reset: row
+				tr
+					&:nth-of-type(odd)
+						background-color: #181818
+					&.general td
+						&:nth-child(1)
+							border-right: none
+						&:nth-child(2)
+							border-left: none
+					&:not(:last-child) td:first-child::before
+						counter-increment: row
+						content: counters(row, ".")". "
+				td
+					font-weight: 500
+					&:first-child
+						text-transform: uppercase
+					&:not(:first-child)
+						text-align: center
+						-webkit-text-stroke: 0.5px $yellow
+						font-weight: 600
+						line-height: 2.02
+						color: $yellow
+
+section.reviews
+	margin-top: 200px
+	.wrapper
+		margin-top: 50px
+	.slick-arrow
+		position: absolute
+		top: 50%
+		svg
+			stroke: #EAEAEA
+			width: 28px
+			height: 54px
+		&:hover svg
+			stroke: $yellow
+		&.slick-prev
+			left: -90px
+			transform: translate(0, -50%)
+		&.slick-next
+			right: -90px
+			transform: translate(0, -50%)
+	.toSlick
+		overflow: hidden
+		padding: 50px 0
+	.slide
+		width: 15.625vw !important
+		height: 30.26vw
+		margin: 0 6vw
+		position: relative
+		z-index: 10
+		cursor: pointer
+		display: inline-block
+		transition: all 0.35s ease-in-out
+		&::before
+			content: ''
+			background-color: #1f2023
+			position: absolute
+			z-index: 2
+			top: 50%
+			left: 50%
+			width: 120%
+			height: 51%
+			transform: translate(-50%, -50%) skew(-$skew)
+			transition: all 0.6s ease-in
+		&.slick-current
+			transform: scale(1.25)
+			z-index: 20
+			&::before
+				background-color: #303135
+		.review_img
+			position: absolute
+			z-index: 5
+			height: 95%
+			width: auto
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+
+section.contacts
+	margin-top: 173px
+	padding-top: 82px
+	overflow: visible
+	.contacts_bg
+		position: absolute
+		width: 100%
+		height: auto
+		opacity: 0.2
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	.wrapper
+		padding-bottom: 260px
+		width: 1280px
+	.connect_us
+		margin-top: 38px
+		text-align: center
+		-webkit-text-stroke: 1px $w
+		color: $tsp
+		font-size: 48px
+		font-weight: bold
+		line-height: 1.25
+		text-transform: uppercase
+	.socials
+		margin-top: 42px
+		display: flex
+		align-items: center
+		justify-content: center
+		gap: 0 14px
+		a
+			&:nth-of-type(3)
+				margin-left: 28px
+			svg
+				fill: $yellow
+				&.stroke
+					stroke: $yellow
+			&:hover
+				svg
+					fill: $dyellow
+					&.stroke
+						stroke: $dyellow
+	.phones
+		margin-top: 20px
+		a
+			width: max-content
+			display: flex
+			align-items: center
+			justify-content: center
+			font-size: 27.3px
+			line-height: 1.19
+			margin: 0 auto
+			&:not(:first-child)
+				margin-top: 18px
+			svg
+				margin-right: 18px
+				stroke: $yellow
+			&:hover
+				color: $yellow
+	.address-schedule
+		margin-top: 40px
+		display: flex
+		align-items: center
+		justify-content: center
+		gap: 90px
+		.address, .schedule
+			display: flex
+			align-items: center
+			svg
+				stroke: $yellow
+				margin-right: 16px
+			span
+				font-family: 'Montserrat', sans-serif
+				font-size: 14px
+				font-weight: 500
+				line-height: 1.19
+				margin-bottom: 6px
+			p
+				font-family: 'Montserrat', sans-serif
+				font-size: 18px
+				font-weight: bold
+				line-height: 1.19
+	form
+		margin-top: 55px
+		.connect_us
+			text-align: left
+			-webkit-text-stroke: 1px #898989
+		.fields
+			margin-top: 24px
+			display: flex
+			justify-content: flex-end
+			align-items: center
+			gap: 30px
+			.skew
+				transform: skew(-$skew*1.5)
+				overflow: hidden
+				width: 26%
+				> *
+					transform: skew($skew*1.5)
+					margin-left: -2%
+					width: 104%
+				&.submit
+					width: max-content
+					> *
+						margin-left: -3%
+						width: 106%
+			input[type=text], input[type=tel]
+				padding: 20px 35px
+				background-color: #27262d
+				color: #eaeaea
+				font-family: 'Raleway', sans-serif
+				font-size: 14px
+				font-weight: 600
+				outline: none
+				&::placeholder
+					color: inherit
+					opacity: 1
+			input[type=submit]
+				padding: 17px 60px
+				background-color: $dyellow
+				&:hover
+					background-color: $yellow
+	.map_wrapper
+		width: 80vw
+		height: 360px
+		position: absolute
+		z-index: 20
+		bottom: 0
+		left: 50%
+		transform: translate(-50%, 50%)
+		&::before
+			content: ''
+			background-color: #27262d
+			width: 105%
+			height: 97%
+			position: absolute
+			z-index: -1
+			bottom: 50px
+			left: 50%
+			transform: translate(-50%, 0)
+		#map
+			width: 100%
+			height: 100%
+			box-shadow: 0 0 65px 0 rgba($b, 0.5), inset 0 0 21px 0 rgba($b, 0.7)
+			> div
+				z-index: -1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

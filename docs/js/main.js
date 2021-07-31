@@ -1,4 +1,23 @@
 
+// Use GMaps
+function initMap() {
+  const coordinates = {
+    lat: 46.404120327360655,
+    lng: 30.731437746037800
+  };
+  const map = new google.maps.Map(document.querySelector("#map"), {
+    center: coordinates,
+    zoom: 17,
+    disableDefaultUI: false,
+    scrollwheel: false,
+  });
+  const marker = new google.maps.Marker({
+    position: coordinates,
+    map: map,
+    title: "Delicate Car Wash"
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Init AOS
   AOS.init({
@@ -23,6 +42,102 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   AOS.refresh();
+
+  // Slicks options
+  slickOptions = {
+    'hs1': {
+      arrows: true,
+      draggable: false,
+      touchThreshold: 300,
+      focusOnSelect: false,
+      infinite: false,
+      autoplay: false,
+      dots: false,
+      variableWidth: false,
+      vertical: false,
+      verticalSwiping: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: $(".slick_nav.hs1 .slick-prev"),
+      nextArrow: $(".slick_nav.hs1  .slick-next")
+    },
+    'hs2': {
+      arrows: true,
+      draggable: false,
+      touchThreshold: 300,
+      focusOnSelect: false,
+      infinite: false,
+      autoplay: false,
+      dots: false,
+      variableWidth: true,
+      vertical: false,
+      verticalSwiping: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      centerMode: true,
+      prevArrow: $(".slick_nav.hs2 .slick-prev"),
+      nextArrow: $(".slick_nav.hs2  .slick-next"),
+      initialSlide: 1
+    },
+    'hs3': {
+      arrows: false,
+      draggable: false,
+      touchThreshold: 300,
+      focusOnSelect: false,
+      infinite: false,
+      autoplay: false,
+      dots: true,
+      variableWidth: true,
+      vertical: false,
+      verticalSwiping: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      appendDots: $(".slick_nav.hs3 "),
+      customPaging: function(slider, i) {
+        return '<button class="change_tab">' + $(slider.$slides[i]).attr('data-title') + '</button>';
+      },
+    },
+    'hs4': {
+      arrows: true,
+      draggable: false,
+      touchThreshold: 300,
+      focusOnSelect: false,
+      infinite: false,
+      autoplay: false,
+      dots: false,
+      variableWidth: true,
+      vertical: false,
+      verticalSwiping: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      centerMode: true,
+      prevArrow: $(".slick-prev.hs4"),
+      nextArrow: $(".slick-next.hs4"),
+      initialSlide: 1
+    },
+  }
+
+  // Init desktops
+  const toSlicks = document.querySelectorAll('.toSlick[data-type]:not([data-mobile=true])');
+  if (toSlicks.length) {
+    toSlicks.forEach(toSlick => {
+      const type = toSlick.getAttribute('data-type');
+      $(toSlick).slick(slickOptions[type]);
+    });
+  }
+
+  // hs2 - Click on slide
+  $("section.portfolio .toSlick .slick-slide").click(function(e) {
+    $('section.portfolio .toSlick').slick('slickGoTo', parseInt(e.target.getAttribute('data-slick-index')));
+    $("section.portfolio .toSlick .slick-slide").removeClass('slick-current');
+    e.target.classList.add('slick-current');
+  });
+  // hs4 - Click on slide
+  $("section.reviews .toSlick .slick-slide").click(function(e) {
+    $('section.reviews .toSlick').slick('slickGoTo', parseInt(e.currentTarget.getAttribute('data-slick-index')));
+    $("section.reviews .toSlick .slick-slide").removeClass('slick-current');
+    e.currentTarget.classList.add('slick-current');
+  });
 });
 
 window.addEventListener("load", () => {
@@ -64,35 +179,14 @@ window.addEventListener("load", () => {
 
   // Smooth anchors
   (function() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-          });
+    $("a[href^='#']").on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({
+          scrollTop: $(this.hash).offset().top - 150
+        }, 400, function(){
       });
     });
   })();
-
-  // Use GMaps
-  function initMap() {
-    // const coordinates = {
-    //   lat: ,
-    //   lng:
-    // };
-    const map = new google.maps.Map(document.querySelector("#map"), {
-      center: coordinates,
-      zoom: 17,
-      disableDefaultUI: false,
-      scrollwheel: false,
-    });
-    const marker = new google.maps.Marker({
-      position: coordinates,
-      map: map,
-      // icon: ''
-    });
-  }
 
   AOS.refresh();
 });

@@ -24,29 +24,33 @@
 	<header>
 		<div class="wrapper">
 			<a href="#" class="logo_delicate">
-
-				<svg width="136" height="41">
-					<use class="logo_delicate" xlink:href="./img/logo_delicate.svg#logo_delicate"></use>
+				<svg>
+					<use xlink:href="./img/icons.svg#logo_delicate"></use>
 				</svg>
 			</a>
 
 			<nav>
 				<ul class="nav_list">
 					<li class="nav_item">
-						<a class="nav_link" href="#">Услуги</a>
+						<a class="nav_link" href="#service">
+							Услуги
+							<svg>
+								<use class="arrow_down" xlink:href="./img/icons.svg#arrow_down"></use>
+							</svg>
+						</a>
 						<ul class="nav_sublist">
-							<li class="nav_subItem"><a href="#" class="nav_subLink">Автомойка</a></li>
-							<li class="nav_subItem"><a href="#" class="nav_subLink">Химчистка</a></li>
-							<li class="nav_subItem"><a href="#" class="nav_subLink">Детейлинг</a></li>
-							<li class="nav_subItem"><a href="#" class="nav_subLink">Антигравийная
+							<li class="nav_subItem"><a href="#service" class="nav_subLink">Автомойка</a></li>
+							<li class="nav_subItem"><a href="#service" class="nav_subLink">Химчистка</a></li>
+							<li class="nav_subItem"><a href="#service" class="nav_subLink">Детейлинг</a></li>
+							<li class="nav_subItem"><a href="#service" class="nav_subLink">Антигравийная
 								плёнка</a></li>
 						</ul>
 					</li>
-					<li class="nav_item"><a class="nav_link" href="#">О нас</a></li>
-					<li class="nav_item"><a class="nav_link" href="#">Цены</a></li>
-					<li class="nav_item"><a class="nav_link" href="#">Отзывы</a></li>
-					<li class="nav_item"><a class="nav_link" href="#">Наши работы</a></li>
-					<li class="nav_item"><a class="nav_link" href="#">Контакты</a></li>
+					<li class="nav_item"><a class="nav_link" href="#about_us">О нас</a></li>
+					<li class="nav_item"><a class="nav_link" href="#prices">Цены</a></li>
+					<li class="nav_item"><a class="nav_link" href="#reviews">Отзывы</a></li>
+					<li class="nav_item"><a class="nav_link" href="#portfolio">Наши работы</a></li>
+					<li class="nav_item"><a class="nav_link" href="#contacts">Контакты</a></li>
 				</ul>
 			</nav>
 
@@ -63,30 +67,648 @@
 			<div class="socials">
 				<a href="#">
 					<svg width="38" height="38">
-						<use class="social_icon" xlink:href="./img/icons.svg#instagram"></use>
+						<use class="social_icon" xlink:href="./img/icons.svg#instagram_big"></use>
 					</svg>
 				</a>
 			</div>
 
-			<button class="open_request">
+			<a class="button open_request" href="#contacts">
 				Записаться
-			</button>
+			</a>
 
 		</div>
 	</header>
 
 	<!-- Content start -->
-	<section class="">
+	<section class="banner_main">
+		<img class="banner_img" src="./img/Banner_main.png" alt="Banner_main">
+		<div class="blurred_wrapper">
+			<div class="toSlick" data-type="hs1" data-mobile="false">
+				<div class="slide">
+					<h1>Delicate</h1>
+					<h2>уход за автомобилем<br>
+						премиум класса</h2>
+					<nav>
+						<ul>
+							<li class="nav_subItem"><a href="#" class="nav_subLink">Автомойка</a></li>
+							<li class="nav_subItem"><a href="#" class="nav_subLink">Химчистка</a></li>
+							<li class="nav_subItem"><a href="#" class="nav_subLink">Детейлинг</a></li>
+							<li class="nav_subItem"><a href="#" class="nav_subLink">Антигравийная плёнка</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="slide">
+					<h1>Delicate</h1>
+					<h2>уход за автомобилем<br>
+						премиум класса</h2>
+					<nav>
+						<ul>
+							<li class="nav_subItem"><a href="#" class="nav_subLink">Автомойка</a></li>
+							<li class="nav_subItem"><a href="#" class="nav_subLink">Химчистка</a></li>
+							<li class="nav_subItem"><a href="#" class="nav_subLink">Детейлинг</a></li>
+							<li class="nav_subItem"><a href="#" class="nav_subLink">Антигравийная плёнка</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="slick_nav hs1">
+				<button class="slick-prev">
+					<svg width="13" height="24">
+						<use class="arrow_left" xlink:href="./img/icons.svg#arrow_left"></use>
+					</svg>
+				</button>
+				<button class="slick-next">
+					<svg width="13" height="24">
+						<use class="arrow_right" xlink:href="./img/icons.svg#arrow_right"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<section id="service" class="service">
 		<div class="wrapper">
-			<h1>
-				Test
-			</h1>
+			<h3>УСлуги</h3>
+			<div class="cards">
+				<div class="card">
+					<div class="service_img">
+						<img src="./img/service_1.png" alt="service_img">
+					</div>
+					<h4>автомойка</h4>
+					<div class="text">
+						<p>Автомойка, где каждый посетитель сможет привести в порядок своего железного коня.</p>
+						<p>Мы справимся с любой задачей в кратчайшие сроки.</p>
+						<button class="more">
+							подробнее
+						</button>
+					</div>
+					<div class="shadow"></div>
+				</div>
+				<div class="card">
+					<div class="service_img">
+						<img src="./img/service_2.png" alt="service_img">
+					</div>
+					<h4>Химчистка</h4>
+					<div class="text">
+						<p>Автомойка, где каждый посетитель сможет привести в порядок своего железного коня.</p>
+						<p>Мы справимся с любой задачей в кратчайшие сроки.</p>
+						<button class="more">
+							подробнее
+						</button>
+					</div>
+					<div class="shadow"></div>
+				</div>
+				<div class="card">
+					<div class="service_img">
+						<img src="./img/service_3.png" alt="service_img">
+					</div>
+					<h4>Детейлинг</h4>
+					<div class="text">
+						<p>Автомойка, где каждый посетитель сможет привести в порядок своего железного коня.</p>
+						<p>Мы справимся с любой задачей в кратчайшие сроки.</p>
+						<button class="more">
+							подробнее
+						</button>
+					</div>
+					<div class="shadow"></div>
+				</div>
+				<div class="card">
+					<div class="service_img">
+						<img src="./img/service_4.png" alt="service_img">
+					</div>
+					<h4>Антигравийная плёнка</h4>
+					<div class="text">
+						<p>Автомойка, где каждый посетитель сможет привести в порядок своего железного коня.</p>
+						<p>Мы справимся с любой задачей в кратчайшие сроки.</p>
+						<button class="more">
+							подробнее
+						</button>
+					</div>
+					<div class="shadow"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="about_us" class="about_us">
+		<div class="wrapper">
+
+			<div class="left">
+				<h3>О нас</h3>
+				<div class="text">
+					<p>Главными ценностями для нас является бескомпромисное качества выплолняемых работа и исключительный подход к каждому автомобилю и его владельцу. Нам важно видеть ваши эмоции, и это является для нас главным драйвером.</p>
+					<p>Преобразите внешний вид вашего автомобиля.</p>
+				</div>
+				<div class="slogan">
+					<a href="#">
+						<svg>
+							<use class="logo_delicate" xlink:href="./img/icons.svg#logo_delicate"></use>
+						</svg>
+					</a>
+					<div class="dash"></div>
+					<h4 class="slogan_text">
+						Больше чем<br>
+						детейлинг
+					</h4>
+				</div>
+			</div>
+
+			<div class="right">
+				<div class="photos">
+					<img src="./img/aboutus_1.png" alt="aboutus">
+					<img src="./img/aboutus_2.png" alt="aboutus">
+					<img src="./img/aboutus_3.png" alt="aboutus">
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section id="pros" class="pros">
+		<div class="wrapper">
+			<div class="card">
+				<p>
+					<span>Опыт работ более 3-х лет</span>
+				</p>
+			</div>
+			<div class="card">
+				<p>
+					<span>Индивидуальный подход</span>
+				</p>
+			</div>
+			<div class="card">
+				<p>
+					Современное оборудование и материалы
+				</p>
+			</div>
+			<div class="card">
+				<p>
+					<span>Работа без выходных</span>
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section id="portfolio" class="portfolio">
+		<h3>наши работы</h3>
+
+		<div class="toSlick" data-type="hs2" data-mobile="false">
+
+			<div class="slide">
+				<img class="portfolio_img" src="./img/portfolio_2.png" alt="portfolio_img">
+				<div class="text">
+					<h5 class="service">Автомойка</h5>
+					<div class="manage">
+						<span class="car_name">Mercedes-benz E 220 d 4MATIC</span>
+						<button class="expand_work more">
+							подробнее
+						</button>
+					</div>
+				</div>
+				<button class="expand_work maximize">
+					<svg width="42" height="42">
+						<use class="maximize" xlink:href="./img/icons.svg#maximize"></use>
+					</svg>
+				</button>
+			</div>
+			<div class="slide">
+				<img class="portfolio_img" src="./img/portfolio_1.png" alt="portfolio_img">
+				<div class="text">
+					<h5 class="service">Автомойка</h5>
+					<div class="manage">
+						<span class="car_name">Mercedes-benz E 220 d 4MATIC</span>
+						<button class="expand_work more">
+							подробнее
+						</button>
+					</div>
+				</div>
+				<button class="expand_work maximize">
+					<svg width="42" height="42">
+						<use class="maximize" xlink:href="./img/icons.svg#maximize"></use>
+					</svg>
+				</button>
+			</div>
+			<div class="slide">
+				<img class="portfolio_img" src="./img/portfolio_3.png" alt="portfolio_img">
+				<div class="text">
+					<h5 class="service">Автомойка</h5>
+					<div class="manage">
+						<span class="car_name">Mercedes-benz E 220 d 4MATIC</span>
+						<button class="expand_work more">
+							подробнее
+						</button>
+					</div>
+				</div>
+				<button class="expand_work maximize">
+					<svg width="42" height="42">
+						<use class="maximize" xlink:href="./img/icons.svg#maximize"></use>
+					</svg>
+				</button>
+			</div>
+
+		</div>
+
+		<div class="slick_nav hs2">
+			<button class="slick-prev">
+				<svg width="13" height="24">
+					<use class="arrow_left" xlink:href="./img/icons.svg#arrow_left"></use>
+				</svg>
+			</button>
+			<button class="slick-next">
+				<svg width="13" height="24">
+					<use class="arrow_right" xlink:href="./img/icons.svg#arrow_right"></use>
+				</svg>
+			</button>
+		</div>
+
+	</section>
+
+	<section id="prices" class="prices">
+		<div class="wrapper">
+			<h3>Стоимость услуг</h3>
+			<div class="slick_nav hs3">
+				<div class="slick_dots"></div>
+			</div>
+			<div class="content toSlick" data-type="hs3" data-mobile="false">
+				<div class="slide" data-title="Мойка автомобиля">
+					<table>
+						<thead>
+							<th>Вид услуги</th>
+							<th>легковой</th>
+							<th>внедорожник</th>
+							<th>микроавтобус</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Мойка кузова (бесконтактная)</td>
+								<td>150</td>
+								<td>170</td>
+								<td>190</td>
+							</tr>
+							<tr>
+								<td>Уборка салона</td>
+								<td>130</td>
+								<td>140</td>
+								<td>160</td>
+							</tr>
+							<tr>
+								<td>Уборка салона (пылесос)</td>
+								<td>90</td>
+								<td>100</td>
+								<td>110</td>
+							</tr>
+							<tr>
+								<td>Чистка ковриков</td>
+								<td>50</td>
+								<td>50</td>
+								<td>50</td>
+							</tr>
+							<tr>
+								<td>Уборка багажного отсека</td>
+								<td>от 50</td>
+								<td>от 60</td>
+								<td>от 70</td>
+							</tr>
+							<tr>
+								<td>Воскование</td>
+								<td>80</td>
+								<td>90</td>
+								<td>100</td>
+							</tr>
+							<tr class="general">
+								<td>Антидождь</td>
+								<td colspan="3">от 200</td>
+							</tr>
+							<tr class="general">
+								<td>Полировка кузова (воском)</td>
+								<td colspan="3">от 400</td>
+							</tr>
+							<tr>
+								<td>Наношампунь</td>
+								<td>100</td>
+								<td>150</td>
+								<td>200</td>
+							</tr>
+							<tr>
+								<td>Полировка пластиковых частей салона</td>
+								<td>70</td>
+								<td>80</td>
+								<td>90</td>
+							</tr>
+							<tr>
+								<td>Обрабатывание кожаных частей салона кондиционером</td>
+								<td>80</td>
+								<td>100</td>
+								<td>120</td>
+							</tr>
+							<tr class="general">
+								<td>Мойка двигателя</td>
+								<td colspan="3">от 200</td>
+							</tr>
+							<tr>
+								<td>Чернение шин (4 шт.)</td>
+								<td>50</td>
+								<td>50</td>
+								<td>50</td>
+							</tr>
+							<tr class="general">
+								<td>Удаление битумных пятен</td>
+								<td colspan="3">от степени загрязнения</td>
+							</tr>
+							<tr class="general">
+								<td>Стирка ковров</td>
+								<td colspan="3">70 - 90 (1 м<sup>2</sup>)</td>
+							</tr>
+							<tr>
+								<td>Минимальный набор услуг</td>
+								<td>250</td>
+								<td>270</td>
+								<td>290</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="slide" data-title="Комплексная мойка автомобиля">
+					<table>
+						<thead>
+							<th>Вид услуги</th>
+							<th>легковой</th>
+							<th>внедорожник</th>
+							<th>микроавтобус</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Мойка кузова (бесконтактная)</td>
+								<td>150</td>
+								<td>170</td>
+								<td>190</td>
+							</tr>
+							<tr>
+								<td>Уборка салона</td>
+								<td>130</td>
+								<td>140</td>
+								<td>160</td>
+							</tr>
+							<tr>
+								<td>Уборка салона (пылесос)</td>
+								<td>90</td>
+								<td>100</td>
+								<td>110</td>
+							</tr>
+							<tr>
+								<td>Чистка ковриков</td>
+								<td>50</td>
+								<td>50</td>
+								<td>50</td>
+							</tr>
+							<tr>
+								<td>Уборка багажного отсека</td>
+								<td>от 50</td>
+								<td>от 60</td>
+								<td>от 70</td>
+							</tr>
+							<tr>
+								<td>Воскование</td>
+								<td>80</td>
+								<td>90</td>
+								<td>100</td>
+							</tr>
+							<tr>
+								<td>Антидождь</td>
+								<td colspan="3">от 200</td>
+							</tr>
+							<tr>
+								<td>Полировка кузова (воском)</td>
+								<td colspan="3">от 400</td>
+							</tr>
+							<tr>
+								<td>Наношампунь</td>
+								<td>100</td>
+								<td>150</td>
+								<td>200</td>
+							</tr>
+							<tr>
+								<td>Полировка пластиковых частей салона</td>
+								<td>70</td>
+								<td>80</td>
+								<td>90</td>
+							</tr>
+							<tr>
+								<td>Обрабатывание кожаных частей салона кондиционером</td>
+								<td>80</td>
+								<td>100</td>
+								<td>120</td>
+							</tr>
+							<tr>
+								<td>Мойка двигателя</td>
+								<td colspan="3">от 200</td>
+							</tr>
+							<tr>
+								<td>Чернение шин (4 шт.)</td>
+								<td>50</td>
+								<td>50</td>
+								<td>50</td>
+							</tr>
+							<tr>
+								<td>Удаление битумных пятен</td>
+								<td colspan="3">от степени загрязнения</td>
+							</tr>
+							<tr>
+								<td>Стирка ковров</td>
+								<td colspan="3">70 - 90 (1 м<sup>2</sup>)</td>
+							</tr>
+							<tr>
+								<td>Минимальный набор услуг</td>
+								<td>250</td>
+								<td>270</td>
+								<td>290</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="reviews" class="reviews">
+		<h3>Отзывы</h3>
+
+		<div class="wrapper">
+
+			<button class="slick-prev hs4">
+				<svg width="28" height="54">
+					<use class="arrow_left" xlink:href="./img/icons.svg#arrow_left"></use>
+				</svg>
+			</button>
+
+			<div class="toSlick" data-type="hs4" data-mobile="false">
+				<div class="slide">
+					<img class="review_img" src="./img/reviews_1.png" alt="review_img">
+				</div>
+				<div class="slide">
+					<img class="review_img" src="./img/reviews_1.png" alt="review_img">
+				</div>
+				<div class="slide">
+					<img class="review_img" src="./img/reviews_1.png" alt="review_img">
+				</div>
+			</div>
+
+			<button class="slick-next hs4">
+				<svg width="28" height="54">
+					<use class="arrow_right" xlink:href="./img/icons.svg#arrow_right"></use>
+				</svg>
+			</button>
+
+		</div>
+
+	</section>
+
+	<section id="contacts" class="contacts">
+		<img class="contacts_bg" src="./img/contacts_bg.png" alt="contacts_bg">
+		<div class="wrapper">
+
+			<h3>Контакты</h3>
+			<p class="connect_us">Свяжитесь с нами прямо сейчас</p>
+
+			<div class="socials">
+				<a href="#"><svg class="stroke" width="28" height="28"><use xlink:href="./img/icons.svg#facebook"></use></svg></a>
+				<a href="#"><svg width="30" height="30"><use xlink:href="./img/icons.svg#instagram"></use></svg></a>
+				<a href="#"><svg width="31" height="31"><use xlink:href="./img/icons.svg#viber"></use></svg></a>
+				<a href="#"><svg width="29" height="24"><use xlink:href="./img/icons.svg#telegram"></use></svg></a>
+			</div>
+
+			<div class="phones">
+				<a href="tel:+380688667443">
+					<svg width="35" height="35">
+						<use xlink:href="./img/icons.svg#phone"></use>
+					</svg>
+					+380 (68) 866-74-43
+				</a>
+			</div>
+
+			<div class="address-schedule">
+				<div class="address">
+					<svg width="24" height="24">
+						<use xlink:href="./img/icons.svg#map"></use>
+					</svg>
+					<div>
+						<p>г. Одесса, ул. Щерса 128</p>
+					</div>
+				</div>
+				<div class="schedule">
+					<svg width="25" height="25">
+						<use xlink:href="./img/icons.svg#calendar"></use>
+					</svg>
+					<div>
+						<span>Работаем:</span>
+						<p>Пн-Вс 9:00 - 21:00</p>
+					</div>
+				</div>
+			</div>
+
+			<form>
+				<p class="connect_us">Связаться с нами</p>
+				<div class="fields">
+					<div class="skew">
+						<input type="text" placeholder="Имя">
+					</div>
+					<div class="skew">
+						<input type="tel" placeholder="Телефон">
+					</div>
+					<div class="skew submit">
+						<input type="submit" value="Записаться">
+					</div>
+				</div>
+			</form>
+
+			<div class="map_wrapper">
+				<div id="map"></div>
+			</div>
 		</div>
 	</section>
 	<!-- Content end -->
-
 	<footer>
-		footer
+		<div class="wrapper">
+
+			<div class="top">
+				<div class="slogan">
+					<a href="#">
+						<svg>
+							<use class="logo_delicate" xlink:href="./img/icons.svg#logo_delicate"></use>
+						</svg>
+					</a>
+					<div class="dash"></div>
+					<h4 class="slogan_text">
+						Больше чем<br>
+						детейлинг
+					</h4>
+				</div>
+				<div class="socials_wrapper">
+					<div class="socials">
+						<a href="#">
+							<svg>
+								<use class="social_icon" xlink:href="./img/icons.svg#instagram"></use>
+							</svg>
+						</a>
+					</div>
+					<p>Не забудь<br>
+						подписаться</p>
+				</div>
+				<div class="contacts">
+					<div class="phones">
+						<a href="tel:+380688667443">
+							<svg class="stroke">
+								<use xlink:href="./img/icons.svg#phone"></use>
+							</svg>
+							+380 (68) 866-74-43
+						</a>
+					</div>
+					<div class="address">
+						<svg class="stroke" width="24" height="24">
+							<use xlink:href="./img/icons.svg#map"></use>
+						</svg>
+						<div>
+							<p>г. Одесса, ул. Щерса 128</p>
+						</div>
+					</div>
+					<div class="schedule">
+						<svg class="stroke" width="25" height="25">
+							<use xlink:href="./img/icons.svg#calendar"></use>
+						</svg>
+						<div>
+							<span>Работаем:</span>
+							<p>Пн-Вс 9:00 - 21:00</p>
+						</div>
+					</div>
+				</div>
+				<nav>
+					<ul class="nav_list">
+						<li class="nav_item"><a class="nav_link" href="#">Услуги</a></li>
+						<li class="nav_item"><a class="nav_link" href="#">О нас</a></li>
+						<li class="nav_item"><a class="nav_link" href="#">Цены</a></li>
+						<li class="nav_item"><a class="nav_link" href="#">Отзывы</a></li>
+						<li class="nav_item"><a class="nav_link" href="#">Наши работы</a></li>
+						<li class="nav_item"><a class="nav_link" href="#">Контакты</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="bottom">
+				<div class="copyright">© Delicate Car Wash 2018-2021</div>
+				<div class="development">
+					<p>Создание сайта  —</p>
+					<a href="https://devpro.agency/">
+						<svg class="native">
+							<style>
+								#dev_grad_1 {	fill: url(#gradient1); }
+								#dev_grad_2 {	fill: url(#gradient2); }
+							</style>
+							<use class="logo_devpro" xlink:href="./img/icons.svg#logo_devpro"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+
+		</div>
 	</footer>
 
 	<!-- Libraries JS -->
@@ -99,6 +721,6 @@
 	<script src="./js/main.js"></script>
 
 	<!-- Google Maps API -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZmmcpk7hgCJk6xk54yD9G-A0-HaccLuQ&callback=initMap" defer></script>
 </body>
 </html>
