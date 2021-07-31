@@ -13,8 +13,9 @@ font-family: 'Raleway', sans-serif
 - pros - need to find a way to align text diagonally. Probably there's only 1 way - https://www.ostraining.com/blog/webdesign/fluid-diagonal-image-with-text-with-css/
 
 # Todo
-> modal screens
+- modal screens
 	- услуги "Подробнее"
 	- порфтолио "Подробнее"
-> fix Helvetica fonts
-> adaptive
+- fix Helvetica fonts
+- adaptive
+- GitHub doesn't like SVG Gradients

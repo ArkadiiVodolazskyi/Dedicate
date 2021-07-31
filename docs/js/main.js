@@ -115,6 +115,69 @@ document.addEventListener("DOMContentLoaded", () => {
       nextArrow: $(".slick-next.hs4"),
       initialSlide: 1
     },
+    'hs5': {
+      arrows: true,
+      draggable: false,
+      touchThreshold: 300,
+      focusOnSelect: false,
+      infinite: false,
+      autoplay: false,
+      dots: false,
+      variableWidth: false,
+      vertical: false,
+      verticalSwiping: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: $(".slick-prev.hs5"),
+      nextArrow: $(".slick-next.hs5")
+    },
+    'hs6': {
+      arrows: true,
+      draggable: false,
+      touchThreshold: 300,
+      focusOnSelect: false,
+      infinite: false,
+      autoplay: false,
+      dots: false,
+      variableWidth: false,
+      vertical: false,
+      verticalSwiping: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: $(".slick-prev.hs6"),
+      nextArrow: $(".slick-next.hs6")
+    },
+    'vs1': {
+      arrows: true,
+      draggable: false,
+      touchThreshold: 300,
+      focusOnSelect: false,
+      infinite: false,
+      autoplay: false,
+      dots: false,
+      variableWidth: false,
+      vertical: true,
+      verticalSwiping: true,
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      centerMode: true,
+      prevArrow: $(".slick-prev.vs1"),
+      nextArrow: $(".slick-next.vs1")
+    },
+    'vs2': {
+      arrows: false,
+      draggable: false,
+      touchThreshold: 300,
+      focusOnSelect: false,
+      infinite: false,
+      autoplay: false,
+      dots: false,
+      variableWidth: false,
+      vertical: true,
+      verticalSwiping: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    },
   }
 
   // Init desktops
@@ -138,6 +201,23 @@ document.addEventListener("DOMContentLoaded", () => {
     $("section.reviews .toSlick .slick-slide").removeClass('slick-current');
     e.currentTarget.classList.add('slick-current');
   });
+
+  // .open-fullscreen-services > #fullscreen-services + goToSlide(data-slide)
+  (function() {
+    const openFullscreenServices = document.querySelectorAll('.open-fullscreen-services');
+    const fullscreenServices = document.getElementById('fullscreen-services');
+    const closeFullscreenServices = document.getElementById('close-fullscreen-services');
+    for (let i = 0; i < openFullscreenServices.length; i++) {
+      openFullscreenServices[i].addEventListener('click', (e) => {
+        const slideIndex = e.target.getAttribute('data-slide');
+        $('.toSlick[data-type="hs5"]').slick('slickGoTo', slideIndex);
+        fullscreenServices.classList.add('active');
+      }, true);
+    }
+    closeFullscreenServices.addEventListener('click', (e) => {
+      fullscreenServices.classList.remove('active');
+    }, true);
+  })();
 });
 
 window.addEventListener("load", () => {
