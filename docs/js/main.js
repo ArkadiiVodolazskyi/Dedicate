@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       appendDots: $(".slick_nav.hs3 "),
       customPaging: function(slider, i) {
         return '<button class="change_tab">' + $(slider.$slides[i]).attr('data-title') + '</button>';
-      },
+      }
     },
     'hs4': {
       arrows: true,
@@ -146,38 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       slidesToScroll: 1,
       prevArrow: $(".slick-prev.hs6"),
       nextArrow: $(".slick-next.hs6")
-    },
-    'vs1': {
-      arrows: true,
-      draggable: false,
-      touchThreshold: 300,
-      focusOnSelect: false,
-      infinite: false,
-      autoplay: false,
-      dots: false,
-      variableWidth: false,
-      vertical: true,
-      verticalSwiping: true,
-      slidesToShow: 6,
-      slidesToScroll: 1,
-      centerMode: true,
-      prevArrow: $(".slick-prev.vs1"),
-      nextArrow: $(".slick-next.vs1")
-    },
-    'vs2': {
-      arrows: false,
-      draggable: false,
-      touchThreshold: 300,
-      focusOnSelect: false,
-      infinite: false,
-      autoplay: false,
-      dots: false,
-      variableWidth: false,
-      vertical: true,
-      verticalSwiping: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    },
+    }
   }
 
   // Init desktops
@@ -189,12 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // hs2 - Click on slide
-  $("section.portfolio .toSlick .slick-slide").click(function(e) {
-    $('section.portfolio .toSlick').slick('slickGoTo', parseInt(e.target.getAttribute('data-slick-index')));
-    $("section.portfolio .toSlick .slick-slide").removeClass('slick-current');
-    e.target.classList.add('slick-current');
-  });
   // hs4 - Click on slide
   $("section.reviews .toSlick .slick-slide").click(function(e) {
     $('section.reviews .toSlick').slick('slickGoTo', parseInt(e.currentTarget.getAttribute('data-slick-index')));
@@ -216,6 +179,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     closeFullscreenServices.addEventListener('click', (e) => {
       fullscreenServices.classList.remove('active');
+    }, true);
+  })();
+
+  // .open-fullscreen-portfolio > #fullscreen-portfolio + goToSlide(data-slide)
+  (function() {
+    const openFullscreenPortfolio = document.querySelectorAll('.open-fullscreen-portfolio');
+    const fullscreenPortfolio = document.getElementById('fullscreen-portfolio');
+    const closeFullscreenPortfolio = document.getElementById('close-fullscreen-portfolio');
+    for (let i = 0; i < openFullscreenPortfolio.length; i++) {
+      openFullscreenPortfolio[i].addEventListener('click', (e) => {
+        // // Init first images
+        // fullscreenPortfolio.querySelectorAll('.gallery .left .image:first-child, .gallery .right .image:first-child').forEach(item => {
+        //   item.classList.add('active');
+        // })
+
+        const slideIndex = e.target.getAttribute('data-slide');
+        $('.toSlick[data-type="hs6"]').slick('slickGoTo', slideIndex);
+        fullscreenPortfolio.classList.add('active');
+      }, true);
+    }
+    closeFullscreenPortfolio.addEventListener('click', (e) => {
+      fullscreenPortfolio.classList.remove('active');
     }, true);
   })();
 });
@@ -266,6 +251,25 @@ window.addEventListener("load", () => {
         }, 400, function(){
       });
     });
+  })();
+
+  // fullscreen-portfolio - gallery : .right .image -> change .left .image
+  (function() {
+    const galleries = document.querySelectorAll('#fullscreen-portfolio .gallery');
+    for (let i = 0; i < galleries.length; i++) {
+      const miniatures = galleries[i].querySelectorAll('.right .image');
+      const fullImgs = galleries[i].querySelectorAll('.left .image');
+      for (let j = 0; j < miniatures.length; j++) {
+        miniatures[j].addEventListener('click', () => {
+          for (let k = 0; k < miniatures.length; k++) {
+            miniatures[k].classList.remove('active');
+            fullImgs[k].classList.remove('active');
+          }
+          fullImgs[j].classList.add('active');
+          miniatures[j].classList.add('active');
+        }, true);
+      }
+    }
   })();
 
   AOS.refresh();

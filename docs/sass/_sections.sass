@@ -61,6 +61,9 @@ section.banner_main
 		right: 59px
 		bottom: 59px
 		transform: translate(-35px, -45px)
+		.slick-arrow.slick-disabled
+			opacity: 0.2
+			pointer-events: none
 
 section.service
 	margin-top: 166px
@@ -227,7 +230,7 @@ section.about_us
 					bottom: 80px
 
 section.pros
-	font-family: 'Helvetica Neue', sans-serif
+	font-family: 'HelveticaNeueCyr', sans-serif
 	background-color: #27262d
 	margin-top: 65px
 	padding: 90px 0
@@ -301,6 +304,7 @@ section.portfolio
 			z-index: 20
 			&::after, .text, button.maximize
 				opacity: 1
+				visibility: visible
 		&::after
 			content: ''
 			display: block
@@ -327,6 +331,7 @@ section.portfolio
 			margin-top: auto
 			@include tr
 			opacity: 0
+			visibility: hidden
 			.service
 				transform: skew(-$skew)
 				padding: 20px 45px
@@ -356,6 +361,7 @@ section.portfolio
 			top: 20px
 			right: 20px
 			background: none
+			padding: 0
 			@include tr
 			opacity: 0
 			svg
@@ -365,7 +371,7 @@ section.portfolio
 				stroke: $yellow
 
 section.prices
-	margin-top: 182px
+	margin-top: 112px
 	.wrapper
 		width: 1280px
 	.slick_nav
@@ -380,12 +386,11 @@ section.prices
 			text-transform: none
 			color: #eaeaea
 			background-color: $tsp
-			&:hover
+			opacity: 0.5
+			&:hover, &[aria-selected=true]
 				color: $dark
 				background-color: $yellow
-			&[aria-selected=true]
-				color: $dark
-				background-color: $yellow
+				opacity: 1
 	.content
 		margin-top: 12px
 	.slide
@@ -406,11 +411,22 @@ section.prices
 			font-weight: 500
 			line-height: 2.65
 			border: 1px solid $yellow
+			&:not(.complex) tbody tr
+				&:nth-of-type(odd)
+					background-color: #181818
+				&:not(:last-child) td:first-child::before
+					counter-increment: row
+					content: counters(row, ".")". "
+			&.complex td
+				padding: 33px 42px
+				font-size: 18px
+				line-height: 1.91
 			tr
 				td, th
 					border: solid 1px #474747
 					padding: 0 30px
 					font-weight: 400
+					color: #eaeaea
 					&:first-child
 						width: 67%
 					&:not(:first-child)
@@ -420,19 +436,15 @@ section.prices
 					&:nth-of-type(1)
 						text-align: left
 						font-size: 24px
+						color: #fff
 			tbody
 				counter-reset: row
 				tr
-					&:nth-of-type(odd)
-						background-color: #181818
 					&.general td
 						&:nth-child(1)
 							border-right: none
 						&:nth-child(2)
 							border-left: none
-					&:not(:last-child) td:first-child::before
-						counter-increment: row
-						content: counters(row, ".")". "
 				td
 					font-weight: 500
 					&:first-child
@@ -443,6 +455,11 @@ section.prices
 						font-weight: 600
 						line-height: 2.02
 						color: $yellow
+					ul
+						display: block
+						list-style-position: inside
+						li
+							display: list-item
 
 section.reviews
 	margin-top: 200px
