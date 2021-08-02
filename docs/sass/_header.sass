@@ -1,5 +1,5 @@
-header
-	height: $header_height * 1px
+#header_main
+	height: $header_height
 	position: fixed
 	top: 0
 	left: 0
@@ -8,6 +8,9 @@ header
 	background-color: $dark
 	color: $w
 	font-family: 'Gotham Pro', sans-serif
+	transition: all 0.4s ease
+	&.roll
+		background-color: rgba($dark, 0.8)
 	.wrapper
 		padding: 22px 0 31px
 		display: flex
@@ -76,7 +79,7 @@ header
 			color: $dyellow
 	.socials a
 		svg
-			fill: #eaeaea
+			fill: $grey
 		&:hover svg
 			fill: $yellow
 	.open_request
@@ -85,4 +88,164 @@ header
 		cursor: pointer
 		&:hover
 			background-color: $dyellow
+	#expand_menu
+		width: 40px
+		height: 40px
+		background-color: $tsp
+		position: relative
+		display: none
+		svg
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			stroke: $grey
+		.close
+			opacity: 0
+			visibility: hidden
+		&:hover svg
+			stroke: $yellow
+		&.active
+			.hamb
+				opacity: 0
+				visibility: hidden
+			.close
+				opacity: 1
+				visibility: visible
+
+#header_mobile
+	position: fixed
+	top: $header_height_mob
+	left: 0
+	width: 100vw
+	height: calc( 100vh - #{$header_height_mob} )
+	z-index: 1000
+	background-color: rgba(#303032, 0.9)
+	color: $w
+	overflow: hidden
+	backdrop-filter: blur(5px)
+	transition: all 0.4s ease
+	opacity: 0
+	visibility: hidden
+	&.active
+		opacity: 1
+		visibility: visible
+	.wrapper
+		width: 75%
+		height: 100%
+		padding: 30px 0 20px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+	nav
+		ul
+			flex-direction: column
+			gap: 20px
+			align-items: center
+			li a
+				text-align: center
+				font-size: 18px
+				font-weight: 500
+				letter-spacing: -0.27px
+				color: #f2f2f2
+				text-transform: uppercase
+				&:hover
+					color: $yellow
+	.slogan
+		display: flex
+		align-items: center
+		justify-content: center
+		> *
+			flex-shrink: 0
+		svg
+			width: 130px
+			height: 40px
+		.dash
+			width: 19px
+			height: 1px
+			background-color: $w
+			margin: 0 20px 24px
+		.slogan_text
+			line-height: 1.29
+			font-family: 'Montserrat', sans-serif
+			font-weight: normal
+			font-size: 18px
+	.contacts
+		display: grid
+		grid-template-areas: "phones socials" "address socials" "schedule socials"
+		justify-content: center
+		gap: 0 30px
+		.phones, .address, .schedule
+			display: flex
+			align-items: center
+			padding: 10px 0
+			svg
+				margin-right: 10px
+			a, p
+				color: $grey
+				font: 20px GothamPro, sans-serif
+				line-height: 1.19
+			span
+				font: 16px GothamPro, sans-serif
+				letter-spacing: -0.17px
+				margin-bottom: 5px
+				color: #f2f2f2
+			a:hover
+				color: $yellow
+		.phones
+			grid-area: phones
+		.address
+			grid-area: address
+		.schedule
+			grid-area: schedule
+		.socials
+			grid-area: socials
+			display: flex
+			flex-direction: column
+			align-items: flex-end
+			gap: 8px
+			svg
+				&.stroke
+					stroke: $yellow
+					&:hover
+						stroke: $dyellow
+				&:not(.stroke)
+					fill: $yellow
+					&:hover
+						fill: $dyellow
+	.bottom
+		.copyright, .development
+			display: flex
+			justify-content: center
+			align-items: center
+			font-size: 16px
+			font-weight: 500
+			line-height: 2.65
+			color: $grey
+			text-transform: uppercase
+		.development
+			margin-top: 10px
+			padding-top: 10px
+			border-top: 0.7px solid #474747
+			a
+				display: flex
+				align-items: center
+			svg
+				margin-left: 12px
+				width: 70px
+				height: 27px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

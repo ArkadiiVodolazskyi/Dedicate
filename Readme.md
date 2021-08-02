@@ -9,4 +9,8 @@ font-family: 'Gotham Pro', sans-serif
 font-family: 'Raleway', sans-serif
 
 # Todo
-- adaptive
+- end adaptive
+- vertical slider on portfolio
+- adaptive fullscreen portfolio
+- fix header.roll on mobile and with modals
+- fix contacts map

@@ -10,8 +10,10 @@ $dyellow:	#4f3e05
 $dyellow2:	#574a1d
 $dark:		#0e101a
 $ldark:		#27262d
+$grey:		#eaeaea
 
-$header_height: 100
+$header_height: 100px
+$header_height_mob: 64px
 $skew: 10deg
 
 /* __________________ Mixins __________________ */
@@ -46,7 +48,7 @@ body
 	height: 100%
 	position: relative
 	z-index: 1
-	padding-top: ($header_height - 5) * 1px
+	padding-top: calc( #{$header_height} - 5px )
 	background-color: $dark
 
 section

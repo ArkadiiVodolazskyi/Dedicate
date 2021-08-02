@@ -77,12 +77,25 @@ document.addEventListener("DOMContentLoaded", () => {
       centerMode: true,
       prevArrow: $(".slick_nav.hs2 .slick-prev"),
       nextArrow: $(".slick_nav.hs2  .slick-next"),
-      initialSlide: 1
+      initialSlide: 1,
+      responsive: [
+        {
+          breakpoint: 769,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: false,
+          },
+        },
+      ],
     },
     'hs3': {
       arrows: false,
       draggable: false,
-      touchThreshold: 300,
+      swipe: false,
+      swipeToSlide: false,
+      touchMove: false,
       focusOnSelect: false,
       infinite: false,
       autoplay: false,
@@ -95,7 +108,16 @@ document.addEventListener("DOMContentLoaded", () => {
       appendDots: $(".slick_nav.hs3 "),
       customPaging: function(slider, i) {
         return '<button class="change_tab">' + $(slider.$slides[i]).attr('data-title') + '</button>';
-      }
+      },
+      responsive: [
+        {
+          breakpoint: 481,
+          settings: {
+            dots: true,
+            draggable: false
+          },
+        },
+      ],
     },
     'hs4': {
       arrows: true,
@@ -129,7 +151,16 @@ document.addEventListener("DOMContentLoaded", () => {
       slidesToShow: 1,
       slidesToScroll: 1,
       prevArrow: $(".slick-prev.hs5"),
-      nextArrow: $(".slick-next.hs5")
+      nextArrow: $(".slick-next.hs5"),
+      responsive: [
+        {
+          breakpoint: 481,
+          settings: {
+            draggable: true,
+            touchThreshold: 300
+          },
+        },
+      ],
     },
     'hs6': {
       arrows: true,
@@ -146,7 +177,45 @@ document.addEventListener("DOMContentLoaded", () => {
       slidesToScroll: 1,
       prevArrow: $(".slick-prev.hs6"),
       nextArrow: $(".slick-next.hs6")
-    }
+    },
+    'hs7': {
+      arrows: true,
+      draggable: false,
+      touchThreshold: 300,
+      focusOnSelect: false,
+      infinite: false,
+      autoplay: false,
+      dots: false,
+      variableWidth: true,
+      vertical: false,
+      verticalSwiping: false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      prevArrow: $(".slick-prev.hs7"),
+      nextArrow: $(".slick-next.hs7"),
+      responsive: [
+        {
+          breakpoint: 769,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: false,
+          },
+        },
+        {
+          breakpoint: 481,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: false,
+            draggable: true,
+            touchThreshold: 300,
+          },
+        },
+      ],
+    },
   }
 
   // Init desktops
@@ -155,6 +224,17 @@ document.addEventListener("DOMContentLoaded", () => {
     toSlicks.forEach(toSlick => {
       const type = toSlick.getAttribute('data-type');
       $(toSlick).slick(slickOptions[type]);
+    });
+  }
+
+  // Init mobiles
+  const toSlicksMob = document.querySelectorAll('.toSlick[data-mobile=true]');
+  if (toSlicksMob.length) {
+    toSlicksMob.forEach(toSlick => {
+      if (window.innerWidth <= toSlick.getAttribute('data-screen')) {
+        const type = toSlick.getAttribute('data-type');
+        $(toSlick).slick(slickOptions[type]);
+      }
     });
   }
 
@@ -213,6 +293,7 @@ window.addEventListener("load", () => {
   const body = document.body;
   const overlay = document.querySelector('#overlay');
   const overlay_mobile = document.querySelector('#overlay_mobile');
+  const header = document.querySelector('header');
 
   // Masked Inputs
   (function() {
@@ -251,6 +332,27 @@ window.addEventListener("load", () => {
         }, 400, function(){
       });
     });
+  })();
+
+  // Header roll
+  (function() {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 50) {
+        header.classList.add('roll');
+      } else {
+        header.classList.remove('roll');
+      }
+    }, true);
+  })();
+
+  // Expand mobile
+  (function() {
+    const header_mobile = document.getElementById('header_mobile');
+    const expand_menu = document.getElementById('expand_menu');
+    expand_menu.addEventListener('click', () => {
+      header_mobile.classList.toggle('active');
+      expand_menu.classList.toggle('active');
+    }, true);
   })();
 
   // fullscreen-portfolio - gallery : .right .image -> change .left .image
