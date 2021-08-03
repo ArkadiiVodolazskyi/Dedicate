@@ -57,6 +57,15 @@
 	footer .bottom::before
 		width: 90vw
 
+	#fullscreen-portfolio .gallery
+		gap: 20px
+		.toSlick
+			padding-top: 10px
+		.left
+			width: 80%
+		.right
+			width: 20%
+
 	section.banner_main .slide
 		padding: 60px 20px 60px 90px
 	section.service .cards .card
@@ -155,6 +164,14 @@
 			left: -60px
 		.slick-arrow.slick-next
 			right: -60px
+	#fullscreen-portfolio
+		#close-fullscreen-portfolio
+			top: 30px
+			right: 30px
+			padding: 7px 8px
+			svg
+				width: 30px
+				height: 30px
 
 	section.banner_main
 		height: 660px
@@ -177,6 +194,9 @@
 			align-items: center
 			button
 				cursor: pointer
+				&.slick-disabled
+					opacity: 0.2
+					pointer-events: none
 				svg
 					stroke: #EAEAEA
 				&:hover svg
@@ -197,6 +217,9 @@
 			padding: 20px
 			width: 36vw !important
 			height: 24vw
+			button.maximize
+				right: unset
+				left: 70vw
 			.text
 				.service
 					padding: 14px 27px
@@ -240,6 +263,10 @@
 		.slick-arrow.desktop.slick-next
 			right: -60px
 	section.contacts
+		.bg_wrap .contacts_bg
+			height: 580px
+			top: 0
+			transform: translate(-50%, 0)
 		.wrapper
 			width: 87%
 			> *
@@ -264,7 +291,7 @@
 		height: $header_height_mob
 		.wrapper
 			padding: 12px 0
-		nav, .phones, .schedule, .open_request
+		nav, .phones, .schedule, .open-request
 			display: none
 		.socials
 			order: 1
@@ -289,13 +316,24 @@
 				width: 30px
 				height: 30px
 	#fullscreen-portfolio
-		#close-fullscreen-portfolio
-			top: 30px
-			right: 30px
-			padding: 7px 8px
-			svg
-				width: 30px
-				height: 30px
+		.slick-arrow.hs6.slick-prev
+			left: -60px
+		.slick-arrow.hs6.slick-next
+			right: -60px
+		.gallery
+			flex-direction: column
+			overflow: visible
+			.left
+				width: 100%
+				height: 80%
+			.right
+				width: 100%
+				height: 20%
+				.toSlick .slick-list
+					padding: 0 !important
+				.image
+					margin: 0 10px
+					height: 130px
 
 	section.banner_main
 		.slide
@@ -380,9 +418,9 @@
 		.slick-arrow.desktop
 			display: none !important
 		.slick_nav.mobile
-			display: block
+			display: flex
 	section.contacts
-		padding-top: 40px
+		padding-top: 50px
 		.contacts_bg
 			width: auto
 			height: 100%
@@ -488,7 +526,6 @@
 		.map_wrapper::before
 			width: 110%
 
-
 @media (max-width: 480px)
 	html
 		font-size: 13px
@@ -548,6 +585,107 @@
 			svg
 				width: 24px
 				height: 24px
+	#fullscreen-portfolio
+		.wrapper
+			padding-top: 60px
+		.gallery
+			.left
+				height: 50%
+			.right
+				.image
+					margin: 0 3px
+					height: 108px
+				.slick-prev, .slick-next
+					display: none
+		.slick-arrow.hs6
+			left: 50% !important
+			top: unset
+			bottom: 30px
+			svg
+				width: 21px
+				height: 42px
+			&.slick-prev
+				transform: translateX(calc( -50% - 20px ))
+			&.slick-next
+				transform: translateX(calc( -50% + 20px ))
+
+	#header_mobile
+		.slogan .slogan_text
+			font-size: 14px
+		.contacts
+			.phones, .address, .schedule
+				svg
+					width: 18px
+					height: 18px
+				a, p
+					font-size: 14px
+				span
+					font-size: 11px
+			.socials svg
+				width: 20px
+				height: 20px
+		.bottom
+			.copyright, .development
+				font-size: 9px
+				color: rgba($grey, 0.5)
+			.development svg
+				width: 70px
+				height: 27px
+	footer
+		padding-top: 72px
+		.top
+			gap: 48px 20px
+			.slogan, .contacts
+				width: 65%
+			.socials_wrapper, nav
+				width: calc( 35% - 20px )
+		.slogan
+			flex-direction: column
+			align-items: stretch
+			gap: 12px
+			svg
+				width: 143px
+				height: 43px
+			.dash
+				display: none
+			.slogan_text
+				font-size: 10px
+				br
+					display: none
+		.socials_wrapper
+			.socials a svg
+				width: 22px
+				height: 22px
+			p
+				font-size: 10px
+		.contacts
+			svg
+				width: 16px
+				height: 16px
+			a, > div
+				font-size: 12px
+				span
+					font-size: 10px
+		nav ul li a
+			font-size: 10px
+		.bottom
+			padding: 45px 0 24px
+			&::before
+				display: none
+			flex-direction: column
+			.copyright, .development
+				width: 100%
+				justify-content: center
+				text-align: center
+				font-size: 9px
+				color: rgba($grey, 0.5)
+			.development
+				margin-top: 12px
+				padding-top: 12px
+				border-top: 1px solid #474747
+				svg
+					width: 70px
+					height: 27px
 
 	section.banner_main
 		.banner_img
@@ -589,6 +727,7 @@
 		.more
 			font-size: 11px
 	section.about_us
+		overflow: hidden
 		.left
 			.text p
 				font-size: 14px
@@ -636,6 +775,7 @@
 		.slide
 			padding: 37px 50px
 			align-items: flex-start
+			margin: 0 50px
 			.text
 				width: 45%
 				.service
@@ -666,7 +806,85 @@
 				display: none
 			> div
 				width: 600px
-
+	section.reviews .slide
+		width: 90vw !important
+		height: 590px
+		&::before
+			width: 95vw
+	section.contacts
+		.contacts_bg
+			height: 572px
+		.wrapper
+			display: flex
+			flex-direction: column
+			padding-bottom: 0
+		h3
+			order: 0
+		.connect_us
+			order: 1
+			margin-top: 40px
+			font-size: 24px
+		.socials
+			order: 2
+			margin-top: 50px
+			a svg
+				width: 18px
+				height: 18px
+		.phones
+			order: 3
+			margin-top: 18px
+			a
+				font-size: 18px
+				svg
+					width: 21px
+					height: 21px
+		.address-schedule
+			order: 4
+			margin-top: 35px
+			flex-direction: column
+			gap: 10px
+			justify-content: flex-start
+			.address, .schedule
+				span
+					font-size: 10px
+				p
+					font-size: 12px
+				svg
+					width: 16px
+					height: 16px
+			.schedule
+				order: 1
+			.address
+				order: 2
+		.map_wrapper
+			order: 5
+			margin-top: 28px
+			width: 100%
+			position: relative
+			height: 260px
+			bottom: unset
+			left: unset
+			transform: unset
+			&::before
+				display: none
+		form
+			order: 6
+			margin-top: 45px
+			.connect_us
+				text-align: center
+			.fields
+				flex-direction: column
+				align-items: center
+				gap: 15px
+				.skew
+					width: 100% !important
+					&.submit
+						width: max-content !important
+				input[type="submit"]
+					background-color: $yellow
+					color: $dark
+					&:hover
+						background-color: $dyellow
 
 
 

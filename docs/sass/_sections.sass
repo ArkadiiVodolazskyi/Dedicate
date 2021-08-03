@@ -72,8 +72,8 @@ section.banner_main
 
 section.service
 	margin-top: 166px
-	.wrapper
-	h3
+	.slick_nav
+		display: none
 	.cards
 		margin-top: 52px
 		display: flex
@@ -392,6 +392,8 @@ section.prices
 		width: 1280px
 	.slick_nav
 		margin-top: 60px
+		.slick-dots
+			justify-content: flex-start
 		button.change_tab
 			padding: 24px 53px
 			font-size: 24px
@@ -544,14 +546,22 @@ section.reviews
 section.contacts
 	margin-top: 173px
 	padding-top: 82px
-	.contacts_bg
+	overflow: visible
+	.bg_wrap
 		position: absolute
 		width: 100%
-		height: auto
+		height: 100%
 		opacity: 0.2
 		top: 50%
 		left: 50%
 		transform: translate(-50%, -50%)
+		.contacts_bg
+			position: absolute
+			height: 100%
+			width: auto
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
 	.wrapper
 		padding-bottom: 260px
 		width: 1280px

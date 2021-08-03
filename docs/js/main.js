@@ -216,6 +216,59 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
+    'vs1': {
+      arrows: true,
+      draggable: true,
+      touchThreshold: 300,
+      focusOnSelect: false,
+      infinite: false,
+      autoplay: false,
+      dots: false,
+      variableWidth: false,
+      adaptiveHeight: true,
+      vertical: true,
+      verticalSwiping: true,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      centerMode: true,
+      prevArrow: $(".slick-prev.vs1"),
+      nextArrow: $(".slick-next.vs1"),
+      responsive: [
+        {
+          breakpoint: 1025,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows: true,
+            centerMode: false,
+            vertical: false,
+            verticalSwiping: false,
+          },
+        },
+        {
+          breakpoint: 769,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            centerMode: false,
+            vertical: false,
+            verticalSwiping: false,
+          },
+        },
+        {
+          breakpoint: 481,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: false,
+            centerMode: false,
+            vertical: false,
+            verticalSwiping: false,
+          },
+        },
+      ],
+    },
   }
 
   // Init desktops
@@ -237,52 +290,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  // hs4 - Click on slide
-  $("section.reviews .toSlick .slick-slide").click(function(e) {
-    $('section.reviews .toSlick').slick('slickGoTo', parseInt(e.currentTarget.getAttribute('data-slick-index')));
-    $("section.reviews .toSlick .slick-slide").removeClass('slick-current');
-    e.currentTarget.classList.add('slick-current');
-  });
-
-  // .open-fullscreen-services > #fullscreen-services + goToSlide(data-slide)
-  (function() {
-    const openFullscreenServices = document.querySelectorAll('.open-fullscreen-services');
-    const fullscreenServices = document.getElementById('fullscreen-services');
-    const closeFullscreenServices = document.getElementById('close-fullscreen-services');
-    for (let i = 0; i < openFullscreenServices.length; i++) {
-      openFullscreenServices[i].addEventListener('click', (e) => {
-        const slideIndex = e.target.getAttribute('data-slide');
-        $('.toSlick[data-type="hs5"]').slick('slickGoTo', slideIndex);
-        fullscreenServices.classList.add('active');
-      }, true);
-    }
-    closeFullscreenServices.addEventListener('click', (e) => {
-      fullscreenServices.classList.remove('active');
-    }, true);
-  })();
-
-  // .open-fullscreen-portfolio > #fullscreen-portfolio + goToSlide(data-slide)
-  (function() {
-    const openFullscreenPortfolio = document.querySelectorAll('.open-fullscreen-portfolio');
-    const fullscreenPortfolio = document.getElementById('fullscreen-portfolio');
-    const closeFullscreenPortfolio = document.getElementById('close-fullscreen-portfolio');
-    for (let i = 0; i < openFullscreenPortfolio.length; i++) {
-      openFullscreenPortfolio[i].addEventListener('click', (e) => {
-        // // Init first images
-        // fullscreenPortfolio.querySelectorAll('.gallery .left .image:first-child, .gallery .right .image:first-child').forEach(item => {
-        //   item.classList.add('active');
-        // })
-
-        const slideIndex = e.target.getAttribute('data-slide');
-        $('.toSlick[data-type="hs6"]').slick('slickGoTo', slideIndex);
-        fullscreenPortfolio.classList.add('active');
-      }, true);
-    }
-    closeFullscreenPortfolio.addEventListener('click', (e) => {
-      fullscreenPortfolio.classList.remove('active');
-    }, true);
-  })();
 });
 
 window.addEventListener("load", () => {
@@ -347,9 +354,11 @@ window.addEventListener("load", () => {
 
   // Expand mobile
   (function() {
+    const header_main = document.getElementById('header_main');
     const header_mobile = document.getElementById('header_mobile');
     const expand_menu = document.getElementById('expand_menu');
     expand_menu.addEventListener('click', () => {
+      header_main.classList.toggle('active');
       header_mobile.classList.toggle('active');
       expand_menu.classList.toggle('active');
     }, true);
@@ -371,6 +380,87 @@ window.addEventListener("load", () => {
           miniatures[j].classList.add('active');
         }, true);
       }
+    }
+  })();
+
+  // hs4 - Click on slide
+  $("section.reviews .toSlick .slick-slide").click(function(e) {
+    $('section.reviews .toSlick').slick('slickGoTo', parseInt(e.currentTarget.getAttribute('data-slick-index')));
+    $("section.reviews .toSlick .slick-slide").removeClass('slick-current');
+    e.currentTarget.classList.add('slick-current');
+  });
+
+  // vs1 - Click on slide
+  (function() {
+    const galleries = document.querySelectorAll('#fullscreen-portfolio .gallery .toSlick');
+    galleries.forEach(gallery => {
+      const images = gallery.querySelectorAll('.slick-slide');
+      $(images).click(function(e) {
+        $(gallery).slick('slickGoTo', parseInt(e.currentTarget.getAttribute('data-slick-index')));
+        $(images).removeClass('slick-current');
+        e.currentTarget.classList.add('slick-current');
+      });
+    });
+  })();
+
+  // .open-fullscreen-services > #fullscreen-services + goToSlide(data-slide)
+  (function() {
+    const openFullscreenServices = document.querySelectorAll('.open-fullscreen-services');
+    const fullscreenServices = document.getElementById('fullscreen-services');
+    const closeFullscreenServices = document.getElementById('close-fullscreen-services');
+    for (let i = 0; i < openFullscreenServices.length; i++) {
+      openFullscreenServices[i].addEventListener('click', (e) => {
+        const slideIndex = e.target.getAttribute('data-slide');
+        $('.toSlick[data-type="hs5"]').slick('slickGoTo', slideIndex);
+        fullscreenServices.classList.add('active');
+      }, true);
+    }
+    closeFullscreenServices.addEventListener('click', (e) => {
+      fullscreenServices.classList.remove('active');
+    }, true);
+  })();
+
+  // .open-fullscreen-portfolio > #fullscreen-portfolio + goToSlide(data-slide)
+  (function() {
+    const openFullscreenPortfolio = document.querySelectorAll('.open-fullscreen-portfolio');
+    const fullscreenPortfolio = document.getElementById('fullscreen-portfolio');
+    const closeFullscreenPortfolio = document.getElementById('close-fullscreen-portfolio');
+    for (let i = 0; i < openFullscreenPortfolio.length; i++) {
+      openFullscreenPortfolio[i].addEventListener('click', (e) => {
+        const slideIndex = e.target.getAttribute('data-slide');
+        $('.toSlick[data-type="hs6"]').slick('slickGoTo', slideIndex);
+        fullscreenPortfolio.classList.add('active');
+      }, true);
+    }
+    closeFullscreenPortfolio.addEventListener('click', (e) => {
+      fullscreenPortfolio.classList.remove('active');
+    }, true);
+  })();
+
+  // open-request
+  (function() {
+    const modalRequest = document.getElementById('modal-request');
+    const openRequests = document.querySelectorAll('.open-request');
+    const closeRequest = document.getElementById('close-request');
+
+    if (openRequests.length) {
+      openRequests.forEach(openRequest => {
+        openRequest.addEventListener('click', () => {
+          overlay.classList.add('active');
+          modalRequest.classList.add('active');
+          overlay.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            modalRequest.classList.remove('active');
+          }, true);
+        }, true);
+      });
+    }
+    if (closeRequest) {
+      closeRequest.addEventListener('click', (e) => {
+        e.preventDefault();
+        overlay.classList.remove('active');
+        modalRequest.classList.remove('active');
+      }, true);
     }
   })();
 

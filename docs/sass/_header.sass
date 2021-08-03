@@ -9,8 +9,9 @@
 	color: $w
 	font-family: 'Gotham Pro', sans-serif
 	transition: all 0.4s ease
-	&.roll
-		background-color: rgba($dark, 0.8)
+	&:not(.active)
+		&.roll
+			background-color: rgba($dark, 0.8)
 	.wrapper
 		padding: 22px 0 31px
 		display: flex
@@ -82,7 +83,7 @@
 			fill: $grey
 		&:hover svg
 			fill: $yellow
-	.open_request
+	.open-request
 		background-color: $yellow
 		color: $b
 		cursor: pointer
@@ -124,6 +125,7 @@
 	color: $w
 	overflow: hidden
 	backdrop-filter: blur(5px)
+	overflow: hidden
 	transition: all 0.4s ease
 	opacity: 0
 	visibility: hidden
@@ -137,6 +139,7 @@
 		display: flex
 		flex-direction: column
 		justify-content: space-between
+		overflow: hidden
 	nav
 		ul
 			flex-direction: column
@@ -235,7 +238,24 @@
 				width: 70px
 				height: 27px
 
-
+#overlay
+	position: fixed
+	z-index: 3000
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	width: 100vw
+	height: 100vh
+	background-color: rgba($dark, 0.9)
+	backdrop-filter: blur(15px)
+	cursor: pointer
+	transition: all 0.2s linear
+	opacity: 0
+	visibility: hidden
+	&.active
+		opacity: 1
+		visibility: visible
 
 
 
