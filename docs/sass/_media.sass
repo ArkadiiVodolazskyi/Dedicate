@@ -491,9 +491,18 @@
 		.slick_nav.mobile
 			bottom: 30px
 	section.prices
-		.slick_nav button.change_tab
-			font-size: 14px
-			padding: 14px 30px
+		.slick_nav
+			width: 100vw
+			overflow-x: scroll
+			scrollbar-width: none
+			&::-webkit-scrollbar
+				display: none
+			.slick-dots
+				width: max-content
+				padding-right: 30px
+			button.change_tab
+				font-size: 14px
+				padding: 14px 30px
 		.slide
 			table, table.complex
 				font-size: 12px
@@ -525,6 +534,7 @@
 					width: 108%
 		.map_wrapper::before
 			width: 110%
+
 
 @media (max-width: 480px)
 	html

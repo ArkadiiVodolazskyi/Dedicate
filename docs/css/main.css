@@ -955,6 +955,9 @@ footer .bottom .development svg { margin-left: 12px; width: 104px; height: 38px;
   section.portfolio .slide { width: 700px !important; height: 490px; margin: 0 20px; }
   section.portfolio .slide.slick-current { transform: none; }
   section.portfolio .slick_nav.mobile { bottom: 30px; }
+  section.prices .slick_nav { width: 100vw; overflow-x: scroll; scrollbar-width: none; }
+  section.prices .slick_nav::-webkit-scrollbar { display: none; }
+  section.prices .slick_nav .slick-dots { width: max-content; padding-right: 30px; }
   section.prices .slick_nav button.change_tab { font-size: 14px; padding: 14px 30px; }
   section.prices .slide table, section.prices .slide table.complex { font-size: 12px; line-height: 2; }
   section.prices .slide table tr th:nth-of-type(1), section.prices .slide table.complex tr th:nth-of-type(1) { font-size: inherit; }

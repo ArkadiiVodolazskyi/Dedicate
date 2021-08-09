@@ -41,7 +41,6 @@
 	// 	// Get API Key from ACF
 	// 	// $apikey = get_field('gmaps_api_key', 'options');
 	// 	// wp_register_script( 'gmaps', "https://maps.googleapis.com/maps/api/js?key=" . $apikey . "&callback=initMap", array('mainjs'), false, true );
-	// 	wp_register_script( 'gmaps', "https://maps.googleapis.com/maps/api/js?key=AIzaSyDZmmcpk7hgCJk6xk54yD9G-A0-HaccLuQ&callback=initMap", array('mainjs'), false, true );
 
 	// 	wp_enqueue_script( 'jquery' );
 	// 	wp_enqueue_script( 'slick' );
