@@ -1,13 +1,17 @@
-#modal-request
+
+#wpcf7-f174-o1 form
 	background-color: $dark
 	color: $w
 	padding: 60px 30px 30px
-	min-width: 400px
+	width: 400px
 	position: fixed
 	z-index: 3500
 	top: 50%
 	left: 50%
 	transform: translate(-50%, -50%)
+	.wpcf7-response-output
+		margin: 0 !important
+		text-align: center
 	h4
 		text-align: center
 		margin-bottom: 20px
@@ -46,16 +50,17 @@
 		background-color: $dyellow
 		&:hover
 			background-color: $yellow
-	button#close-request
+	> p
 		position: absolute
 		top: 12px
 		right: 12px
-		padding: 10px
-		background-color: $tsp
-		svg
-			width: 30px
-			height: 30px
-			transition: all 0.2s linear
-			stroke: $grey
-		&:hover svg
-			stroke: $yellow
+		button#close-request
+			padding: 10px
+			background-color: $tsp
+			svg
+				width: 30px
+				height: 30px
+				transition: all 0.2s linear
+				stroke: $grey
+			&:hover svg
+				stroke: $yellow

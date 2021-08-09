@@ -32,11 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
     throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
 
     // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-    offset: 120, // was 120 - offset (in px) from the original trigger point
+    offset: 90, // was 120 - offset (in px) from the original trigger point
     delay: 0, // values from 0 to 3000, with step 50ms
     duration: 400, // values from 0 to 3000, with step 50ms
     easing: 'ease', // default easing for AOS animations
-    once: false, // whether animation should happen only once - while scrolling down
+    once: true, // whether animation should happen only once - while scrolling down
     mirror: false, // whether elements should animate out while scrolling past them
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
   });
@@ -165,7 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
     'hs6': {
       arrows: true,
       draggable: false,
-      touchThreshold: 300,
+      swipe: false,
+      touchMove: false,
       focusOnSelect: false,
       infinite: false,
       autoplay: false,
@@ -176,7 +177,17 @@ document.addEventListener("DOMContentLoaded", () => {
       slidesToShow: 1,
       slidesToScroll: 1,
       prevArrow: $(".slick-prev.hs6"),
-      nextArrow: $(".slick-next.hs6")
+      nextArrow: $(".slick-next.hs6"),
+      responsive: [
+        {
+          breakpoint: 481,
+          settings: {
+            draggable: false,
+            swipe: false,
+            touchMove: false,
+          },
+        },
+      ],
     },
     'hs7': {
       arrows: true,
@@ -302,6 +313,12 @@ window.addEventListener("load", () => {
   const overlay_mobile = document.querySelector('#overlay_mobile');
   const header = document.querySelector('header');
 
+  // Loaded animations
+  const loading = document.querySelectorAll('.loading');
+  loading.forEach(el => {
+    el.classList.add('loaded');
+  });
+
   // Masked Inputs
   (function() {
     const inputTels = document.querySelectorAll('input[type=tel]');
@@ -382,6 +399,13 @@ window.addEventListener("load", () => {
       }
     }
   })();
+
+  // hs1 - change banner with slide
+  $("section.banner_main .toSlick").on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    console.log(nextSlide);
+    $("section.banner_main .banner_img").removeClass('active');
+    $(`section.banner_main .banner_img:nth-of-type(${nextSlide + 1})`).addClass('active');
+  });
 
   // hs4 - Click on slide
   $("section.reviews .toSlick .slick-slide").click(function(e) {

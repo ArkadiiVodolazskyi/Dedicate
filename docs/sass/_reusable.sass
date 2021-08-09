@@ -68,18 +68,10 @@ section
 		position: relative
 		font-weight: normal
 		line-height: 1.25
-		&::before
-			content: url('../img/header_line_left.svg')
+		gap: 22px
+		img
 			width: 85px
 			height: 12px
-			display: flex
-			margin-right: 22px
-		&::after
-			content: url('../img/header_line_right.svg')
-			width: 85px
-			height: 12px
-			display: flex
-			margin-left: 22px
 
 
 @for $i from 1 through 6
@@ -142,3 +134,15 @@ button, [type=submit], .button
 	opacity: 0.2
 	pointer-events: none
 
+.grecaptcha-badge
+	display: none !important
+	opacity: 0 !important
+	visibility: hidden !important
+
+[data-aos="draw_text"]
+	.letter
+		stroke-dasharray: 600
+		stroke-dashoffset: 2000
+	&.aos-animate
+		.letter
+			stroke-dashoffset: 1400

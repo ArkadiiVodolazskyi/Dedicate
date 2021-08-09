@@ -536,12 +536,10 @@
 		font-size: 24px
 	section h3
 		font-size: 24px
-		&::before
-			transform: scale(0.6)
-			margin-right: 6px
-		&::after
-			transform: scale(0.6)
-			margin-left: 6px
+		gap: 14px
+		img
+			width: 38px
+			height: 9px
 
 	#fullscreen-services
 		&::before
@@ -867,26 +865,40 @@
 			transform: unset
 			&::before
 				display: none
-		form
+		.wpcf7
 			order: 6
 			margin-top: 45px
-			.connect_us
-				text-align: center
-			.fields
-				flex-direction: column
-				align-items: center
-				gap: 15px
-				.skew
-					width: 100% !important
-					&.submit
-						width: max-content !important
-				input[type="submit"]
-					background-color: $yellow
-					color: $dark
-					&:hover
-						background-color: $dyellow
+			form
+				.connect_us
+					text-align: center
+				.fields
+					flex-direction: column
+					align-items: center
+					gap: 15px
+					.skew
+						width: 100% !important
+						&.submit
+							width: max-content !important
+					input[type="submit"]
+						background-color: $yellow
+						color: $dark
+						&:hover
+							background-color: $dyellow
 
-
+@media (max-width: 360px)
+	#header_mobile
+		.wrapper
+			padding: 20px 0
+		nav ul
+			gap: 10px
+			li a
+				font-size: 14px
+		.slogan
+			svg
+				width: 110px
+				height: 30px
+			.dash
+				margin: 0 10px 17px
 
 
 

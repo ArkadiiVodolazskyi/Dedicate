@@ -89,6 +89,41 @@
 		cursor: pointer
 		&:hover
 			background-color: $dyellow
+		@media (min-width: 1025px)
+			opacity: 0
+    	transform: translateY(80px)
+			&.loaded
+				animation: headerButton 0.6s forwards ease
+		border-color: $tsp
+		position: relative
+		*
+			box-sizing: border-box
+		.text
+			position: relative
+			color: $b
+		.button__background
+			top: -2px
+			bottom: -2px
+			left: -2px
+			right: -1px
+			background: $yellow
+			position: absolute
+			transition: opacity .3s
+		.button__shine
+			animation: GradientButton-module--shining--PICUN 2s ease 2s infinite both running
+			border: 2px solid $dark
+			position: absolute
+			top: -2px
+			left: -2px
+			right: -2px
+			bottom: -2px
+			opacity: .7
+			z-index: 1
+			-webkit-clip-path: polygon(-50% 0,0 0,-80% 100%,-30% 100%)
+			clip-path: polygon(-50% 0,0 0,-80% 100%,-30% 100%)
+			transition: -webkit-clip-path .7s
+			transition: clip-path .7s
+			transition: clip-path .7s, -webkit-clip-path .7s
 	#expand_menu
 		width: 40px
 		height: 40px
@@ -133,7 +168,7 @@
 		opacity: 1
 		visibility: visible
 	.wrapper
-		width: 75%
+		width: 80%
 		height: 100%
 		padding: 30px 0 20px
 		display: flex
