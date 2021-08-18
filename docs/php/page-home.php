@@ -54,7 +54,7 @@
 		</div>
 	</section>
 
-	<section id="service" class="service">
+	<section id="services" class="service">
 		<div class="wrapper">
 			<h3>
 				<img src="<?= B_IMG_DIR; ?>/header_line_left.png" data-aos="slide-right">
@@ -416,7 +416,8 @@
 			<?php echo do_shortcode( '[contact-form-7 id="175" title="Связаться с нами"]' ); ?>
 
 			<div class="map_wrapper">
-				<div id="map" data-aos="slide-right"></div>
+				<!-- <div id="map" data-aos="slide-right"></div> -->
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2751.244108937063!2d30.72926025094772!3d46.40421537814611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c633603bf516cf%3A0x2cce6c0acbdab12f!2z0JvRjtGB0YLQtNC-0YDRhNGB0LrQsNGPINC00L7RgC4sIDE0OSwg0J7QtNC10YHRgdCwLCDQntC00LXRgdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA2NTAwMA!5e0!3m2!1sru!2sua!4v1629120512759!5m2!1sru!2sua" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 			</div>
 		</div>
 	</section>

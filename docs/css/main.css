@@ -8,6 +8,8 @@ html { max-width: 100vw; scroll-behavior: unset; position: relative; font-smooth
 
 body { width: 100%; height: 100%; position: relative; z-index: 1; padding-top: calc( 100px - 5px); background-color: #0e101a; }
 
+body.discroll { overflow: hidden; }
+
 section { position: relative; z-index: 5; max-width: 100vw; overflow: hidden; color: #ffffff; }
 
 section h3 { text-align: center; font-weight: normal; display: flex; justify-content: center; align-items: center; width: max-content; margin: 0 auto; position: relative; font-weight: normal; line-height: 1.25; gap: 22px; }
@@ -75,6 +77,8 @@ button, [type=submit], .button { padding: 19px 27px; font: 14px 'Gotham Pro', sa
 
 [data-aos="draw_text"].aos-animate .letter { stroke-dashoffset: 1400; }
 
+.wpcf7-response-output { max-height: 200px; animation: fadeOut 2s forwards linear; }
+
 @keyframes fadeIn { 0% { opacity: 0; }
   100% { opacity: 1; } }
 
@@ -107,6 +111,11 @@ button, [type=submit], .button { padding: 19px 27px; font: 14px 'Gotham Pro', sa
   100% { opacity: 1;
     transform: translate(0, 0); } }
 
+@keyframes fadeOut { 0% { opacity: 1;
+    max-height: 200px; }
+  100% { opacity: 0;
+    max-height: 0; } }
+
 #header_main { height: 100px; position: fixed; top: 0; left: 0; width: 100vw; z-index: 500; background-color: #0e101a; color: #ffffff; font-family: 'Gotham Pro', sans-serif; transition: all 0.4s ease; }
 
 #header_main:not(.active).roll { background-color: rgba(14, 16, 26, 0.8); }
@@ -131,9 +140,9 @@ button, [type=submit], .button { padding: 19px 27px; font: 14px 'Gotham Pro', sa
 
 #header_main nav .nav_link svg { width: 10px; height: 6.6px; fill: none; stroke: #F2F2F2; }
 
-#header_main nav .nav_link:hover { color: #ffc700; }
+#header_main nav .nav_link:hover, #header_main nav .nav_link.active { color: #ffc700; }
 
-#header_main nav .nav_link:hover svg { stroke: #ffc700; }
+#header_main nav .nav_link:hover svg, #header_main nav .nav_link.active svg { stroke: #ffc700; }
 
 #header_main nav .nav_sublist { position: absolute; z-index: 100; top: 90%; left: 50%; transform: translate(-50%, 0); width: auto; max-width: 200px; background-color: rgba(14, 16, 26, 0.8); display: block; text-align: center; transition: all 0.2s linear; opacity: 0; visibility: hidden; }
 
@@ -931,7 +940,8 @@ footer .bottom .development svg { margin-left: 12px; width: 104px; height: 38px;
   section.reviews .slick-arrow.desktop { display: none !important; }
   section.reviews .slick_nav.mobile { display: flex; }
   section.contacts { padding-top: 50px; }
-  section.contacts .contacts_bg { width: auto; height: 100%; transform: translate(-50%, 0); top: 0; } }
+  section.contacts .contacts_bg { width: auto; height: 100%; transform: translate(-50%, 0); top: 0; }
+  section.contacts .wpcf7 form .wpcf7-response-output { width: 100%; } }
 
 @media (max-width: 768px) { h3 { font-size: 30px; }
   #fullscreen-services .slide { gap: 30px; }
